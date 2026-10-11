@@ -65,6 +65,12 @@ run it for the tournament, close Fiddler afterwards, and remove the certificate
 (**Tools → Options → HTTPS → Actions → Reset All Certificates**) when they're done with it.
 :::
 
+::: danger Discord
+Fiddler passes all of the PC's HTTPS traffic through itself, Discord's too. Tell players not to join
+servers or do anything big on Discord (account settings, email, password, purchases) while Fiddler is open:
+Discord may take it for a hacked account and ban it. Voice chat and normal messages are fine.
+:::
+
 ::: tip
 somtum.fun's player guide for this is on its wiki:
 [Tournament client](https://osu.blueskychan.dev/wiki/Tournaments/Tournament_client). Feel free to adapt it
