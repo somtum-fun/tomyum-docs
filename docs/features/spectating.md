@@ -48,7 +48,7 @@ replays to the website's uploads, where the website and TomYum read them.
 ## The tournament client
 
 The tournament client's windows spectate players like a game does, each showing its own player. See
-[stable](/clients/stable#the-tournament-client).
+[tournaments](/features/tournaments).
 
 ## For plugins
 

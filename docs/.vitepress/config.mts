@@ -48,6 +48,7 @@ export default defineConfig({
         text: 'Features',
         items: [
           { text: 'Spectating', link: '/features/spectating' },
+          { text: 'Tournaments', link: '/features/tournaments' },
           { text: 'IRC', link: '/features/irc' },
           { text: 'Bots', link: '/features/bots' },
           { text: 'Custom beatmaps', link: '/features/custom-beatmaps' },

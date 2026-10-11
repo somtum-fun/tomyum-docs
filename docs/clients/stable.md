@@ -77,8 +77,9 @@ sessions: they don't replace the player's own game, aren't listed as players, an
 PMs or login announcement. A window follows a match's state and its `#multiplayer` chat, and
 spectates players like a game does, so each window shows its own player.
 
-To use it, put a `tournament.cfg` in the osu! folder and start osu! with `-devserver example.com` as
-usual.
+The tournament client starts its windows by itself, **without** `-devserver`, so they connect to
+osu!'s servers unless the player's network sends them to yours. See
+[tournaments](/features/tournaments#osu-stable) for how players set that up.
 
 ## Bots
 
