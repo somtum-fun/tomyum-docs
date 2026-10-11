@@ -4,8 +4,15 @@ TomYum is an open-source private server for the rhythm game osu!, written in C# 
 TomYum server takes the osu!stable client, the osu!lazer client and many older stable builds, all on
 the same accounts and leaderboards.
 
-It's the server [somtum.fun](https://somtum.fun) runs on. This site is about **TomYum-OSS**, the open
-source version, and is written for people who want to run their own server with it.
+This site is about **TomYum-OSS**, the open source version, and is written for people who want to run
+their own server with it.
+
+::: info somtum.fun runs a modified TomYum
+[somtum.fun](https://somtum.fun) runs its own, modified version of TomYum-OSS, with changes and plugins
+that are only for somtum.fun (such as its Discord bot and anti-cheat). New features often reach
+somtum.fun first and TomYum-OSS later. So something you see on somtum.fun may not be in TomYum-OSS yet, or
+may never be. These docs only describe what's in TomYum-OSS.
+:::
 
 ::: warning Not affiliated with ppy
 TomYum is a fan project. It isn't affiliated with or endorsed by ppy Pty Ltd, and "osu!" is ppy's

@@ -4,7 +4,7 @@ layout: home
 hero:
   name: TomYum
   text: An osu! server in C#
-  tagline: For lazer, stable and clients back to 2008. Open source, MIT licensed, and what somtum.fun runs on.
+  tagline: For lazer, stable and clients back to 2008. Open source, MIT licensed, and the base of the server somtum.fun runs.
   image:
     src: /logo.png
     alt: TomYum
