@@ -32,7 +32,7 @@ the moving parts there.
 cd ~
 git clone https://github.com/somtum-fun/TomYum-OSS.git
 git clone https://github.com/somtum-fun/osu-web-tomyum.git osu-web
-git clone https://github.com/sundeiii/tomyum-spectator.git
+git clone https://github.com/somtum-fun/tomyum-spectator.git
 ```
 
 The website must be the TomYum fork (or your own fork of it): the staff panels, `tomyum:setup` and
