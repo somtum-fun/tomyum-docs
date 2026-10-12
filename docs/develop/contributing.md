@@ -3,6 +3,13 @@
 TomYum-OSS is MIT licensed. Issues and pull requests are welcome on
 [GitHub](https://github.com/somtum-fun/TomYum-OSS).
 
+::: warning Security problems
+Please don't report a security problem in a public issue. Email
+[mind@somtum.fun](mailto:mind@somtum.fun) instead: what it is, how to reproduce it, and the version
+you tested. We'll reply within a few days and credit you in the fix unless you'd rather not be named.
+The full policy is in [SECURITY.md](https://github.com/somtum-fun/TomYum-OSS/blob/main/SECURITY.md).
+:::
+
 ## Before you open a pull request
 
 ```bash
