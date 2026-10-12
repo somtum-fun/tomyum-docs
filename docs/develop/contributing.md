@@ -3,6 +3,10 @@
 TomYum-OSS is MIT licensed. Issues and pull requests are welcome on
 [GitHub](https://github.com/somtum-fun/TomYum-OSS).
 
+Everyone taking part (issues, pull requests, discussions) follows our
+[Code of Conduct](https://github.com/somtum-fun/TomYum-OSS/blob/main/CODE_OF_CONDUCT.md), the
+Contributor Covenant 2.1. Report problems to [mind@somtum.fun](mailto:mind@somtum.fun).
+
 ::: warning Security problems
 Please don't report a security problem in a public issue. Email
 [mind@somtum.fun](mailto:mind@somtum.fun) instead: what it is, how to reproduce it, and the version

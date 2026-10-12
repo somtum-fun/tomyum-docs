@@ -18,6 +18,9 @@ defaults should match TomYum-OSS, so check them there before writing them down.
 
 ## Contributing
 
+Everyone taking part follows our [Code of Conduct](CODE_OF_CONDUCT.md) (the Contributor Covenant); report
+problems to [mind@somtum.fun](mailto:mind@somtum.fun).
+
 Fork the repository, make your change and open a pull request. Our team believes in using AI as an
 assistant, always under human review. Low-effort AI-generated ("slop") pull requests may be closed without
 notice.
