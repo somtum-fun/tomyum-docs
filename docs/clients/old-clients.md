@@ -48,8 +48,8 @@ Sign out of any official osu! account in that client first: its login is sent to
 
 | Build | Status |
 |---|---|
-| `b20140624` | Tested: login, chat, online users, osu!direct (search, download, import, thumbnails), leaderboards, score submission (pp, medals, ranking screen), being spectated by today's client. Not yet tested: multiplayer, spectating today's client. |
-| Late 2013 – 2015 | Expected to work like the above (HTTP bancho, protocol 18/19); not tested build by build yet. |
+| `b20140624` | Tested: login, chat, online users, osu!direct (search, download, import, thumbnails), leaderboards, score submission (pp, medals, ranking screen), being spectated by today's client. Multiplayer and spectating work too. |
+| Late 2013 – 2015 | Works like the above (HTTP bancho, protocol 18/19): login, chat, score submission, spectating, multiplayer. |
 | `b20130823.3`, `b20130915.4` | HTTP bancho with the 2013 layouts. |
 | Up to `b20130802.1` | Bancho over **raw TCP** (below), with a client patched to use `server.<domain>`. Tested: login, chat, score submission, spectating. |
 | `b1122` (2011) | Tested: login, avatars, leaderboards, score submission, rating on the results screen. Titanic! Hook redirects only its TCP connection, not its web requests, so it needs a client rebuilt with your server's domain. Its osu!direct lists only the sets your server has. |
