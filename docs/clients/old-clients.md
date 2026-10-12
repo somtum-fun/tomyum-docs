@@ -1,13 +1,16 @@
 # Old clients
 
 TomYum speaks the protocols of osu!stable builds back to 2008 (b337), and their scores go on the
-**same leaderboards** as today's stable. The best-tested builds are from late 2013 to 2015; older eras
-are translated from the decompiled clients and covered by tests, but haven't been played build by
-build yet.
+**same leaderboards** as today's stable. Old-client support is finished: the 2008–2013 builds that talk
+raw TCP have been played with login, score submission, spectating and the rest working, and late 2013 to
+2015 builds use HTTP bancho as today's client does.
 
-::: warning Work in progress
-Old-client work is paused upstream: priority is the latest lazer, stable 2023+ and anti-cheat.
-What's below works as described, with the gaps listed.
+::: tip Today's beatmaps on old builds
+Old builds can't read every part of today's `.osu` files (newer sections, osu!mania before 2012, and
+so on). Players who want today's maps to load properly can use the
+[somtum-fun/hook](https://github.com/somtum-fun/hook) fork of Titanic! Hook instead: it rewrites only
+what that build can't read as each map loads, and adds Relax/Autopilot fixes for old builds. It's set up
+the same way as below.
 :::
 
 ## For players: Titanic! Hook
@@ -48,9 +51,9 @@ Sign out of any official osu! account in that client first: its login is sent to
 | `b20140624` | Tested: login, chat, online users, osu!direct (search, download, import, thumbnails), leaderboards, score submission (pp, medals, ranking screen), being spectated by today's client. Not yet tested: multiplayer, spectating today's client. |
 | Late 2013 – 2015 | Expected to work like the above (HTTP bancho, protocol 18/19); not tested build by build yet. |
 | `b20130823.3`, `b20130915.4` | HTTP bancho with the 2013 layouts. |
-| Up to `b20130802.1` | Bancho over **raw TCP** (below), with a client patched to use `server.<domain>`. |
+| Up to `b20130802.1` | Bancho over **raw TCP** (below), with a client patched to use `server.<domain>`. Tested: login, chat, score submission, spectating. |
 | `b1122` (2011) | Tested: login, avatars, leaderboards, score submission, rating on the results screen. Titanic! Hook redirects only its TCP connection, not its web requests, so it needs a client rebuilt with your server's domain. Its osu!direct lists only the sets your server has. |
-| b337 – b20130802.1 (2008 – 2013) | Translated per protocol era and covered by tests (`OldBanchoTests`), not yet played build by build: login, chat, PMs, channels, friends, statuses, the online list, spectating, multiplayer and song select's beatmap info. |
+| b337 – b20130802.1 (2008 – 2013) | Played and working: login, chat, PMs, channels, friends, statuses, the online list, score submission, spectating, multiplayer and song select's beatmap info. Each protocol era is also covered by tests (`OldBanchoTests`). |
 
 ## TCP bancho (builds up to b20130802.1)
 
