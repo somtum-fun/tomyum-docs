@@ -37,9 +37,9 @@ so profiles, rankings and beatmap leaderboards fill up as people play.
 
 ## Status
 
-TomYum is at version `0.3.0-dev` and used in production. It's still `-dev`: the
-[roadmap](/reference/roadmap) lists what's left before `1.0.0`, including taking the remaining
-somtum.fun-specific choices out of the code.
+TomYum is at version `0.5.0`, its first production-ready release. The
+[roadmap](/reference/roadmap) lists what's left before `1.0.0`: scaling, object storage, and taking the
+remaining somtum.fun-specific choices out of the code.
 
 ## Where to go next
 

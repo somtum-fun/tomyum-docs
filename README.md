@@ -1,7 +1,7 @@
 # tomyum-docs
 
 The docs website for [TomYum-OSS](https://github.com/somtum-fun/TomYum-OSS): how to run your own osu! server
-with TomYum. Built with [VitePress](https://vitepress.dev).
+with TomYum. Live at [docs.somtum.fun](https://docs.somtum.fun). Built with [VitePress](https://vitepress.dev).
 
 > TomYum is not affiliated with ppy Pty Ltd. osu! is a trademark of ppy Pty Ltd.
 

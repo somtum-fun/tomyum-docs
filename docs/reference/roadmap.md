@@ -1,40 +1,32 @@
 # Roadmap
 
-TomYum is at `0.3.0-dev`: used in production for stable, lazer and the website. `0.5.0` is the
-first production-ready release; `0.6.0` to `1.0.0` bring fixes and scaling. This page sums up what's
-done and what's left; the full checklist is
-[docs/ROADMAP.md](https://github.com/somtum-fun/TomYum-OSS/blob/main/docs/ROADMAP.md).
+TomYum is at `0.5.0`, its first production-ready release. `0.6.0` to `1.0.0` bring small fixes,
+scaling and a core generic enough for anyone's server. This page sums up what's done and what's left;
+the checklist is [docs/ROADMAP.md](https://github.com/somtum-fun/TomYum-OSS/blob/main/docs/ROADMAP.md).
 
 ## Versions
 
 | Version | Date | What came |
 |---|---|---|
-| `0.1.0-dev` | 2026-07-07 | The feature wave opens: `.osu` cache, pp sidecar, database migrations |
-| `0.2.0-dev` | 2026-10-01 | lazer and the website as accounts and scores, moderation and the staff panels, anti-cheat, Discord bot, IRC, bot accounts, BN/NAT tools, maintenance mode, support tickets |
-| `0.3.0-dev` | 2026-10-03 | Old clients (2013–2015 through Titanic! Hook, TCP bancho for older builds), Relax/Autopilot with Akatsuki pp, pp reworks and pp library updates from the admin panel, the watchdog, metrics as a plugin, tickets from any IMAP mailbox, the server's own name in the bot's posts |
-
-## 0.5.0: production-ready
-
-- [x] Old clients finished: every build from 2008 to 2015.
-- [x] Stable sessions: no double logins or "already logged in" after closing the game; idle sessions
-      end after a minute; staff changes reconnect the player.
-- [x] A bancho.py importer, and ranking rules (an inactivity rule, days in qualified).
-- [x] A security review of the whole server, and its fixes.
-- [ ] Release `0.5.0` without `-dev`.
+| `0.1.0-dev` | 2026-07-07 | `.osu` cache, pp sidecar, database migrations, the plugin host |
+| `0.2.0-dev` | 2026-10-01 | lazer and the website as accounts and scores, moderation and the staff panels, anti-cheat hooks, IRC, bot accounts, BN/NAT tools, maintenance mode, support tickets |
+| `0.3.0-dev` | 2026-10-03 | Old clients, Relax/Autopilot with Akatsuki pp, pp reworks and pp library updates from the admin panel, the watchdog, metrics as a plugin, tickets from any IMAP mailbox |
+| `0.5.0` | 2026-10-12 | Production-ready: old clients finished (2008 to 2015), stable sessions fixed, ranking rules (days in qualified, an inactivity rule), a bancho.py importer, a security review of the whole server and its fixes |
 
 ## 0.6.0 to 1.0
 
 The goal for `1.0.0`: TomYum runs anyone's server without somtum.fun's choices baked in.
 
-- [ ] Server-specific behaviour (welcome texts, Discord channels and wording, store, maintenance texts,
-      ticket categories, the Relax/Autopilot pp source, custom medals) behind plugins or settings.
-- [ ] No server-specific names or addresses in code, docs or defaults.
-- [ ] Clean-up: dead code and leftovers (the unused `Storage` stubs until they're implemented).
+- [ ] Small fixes from production.
+- [ ] Scaling, stage by stage: a bigger machine, then the databases on their own, copies of what's
+      stateless, and bancho on several machines (online state in Redis); Kubernetes after that.
+- [ ] Object storage (S3, R2, Spaces, B2) for replays, maps and screenshots.
+- [ ] Server-specific behaviour (welcome texts, store, maintenance texts, ticket categories, the
+      Relax/Autopilot pp source, custom medals) behind plugins or settings; no server-specific names or
+      addresses in code, docs or defaults.
 - [ ] Docs for operators and contributors, a changelog per version, a licence review. (This site is
       part of that.)
-- [ ] Scaling: a bigger machine, then the databases on their own, copies of what's stateless, and
-      bancho on several machines; object storage; Kubernetes.
-- [ ] Then `1.0.0` without `-dev`, and SemVer from there.
+- [ ] Then `1.0.0`, and SemVer from there.
 
 ## Done
 
@@ -46,9 +38,9 @@ The goal for `1.0.0`: TomYum runs anyone's server without somtum.fun's choices b
 - lazer, through osu-web and ppy's own services: login, scores, multiplayer, spectating, the daily
   challenge, Ranked Play, beatmap submission, Relax on lazer, ranked mods.
 - The website on the same accounts, with scores, stats, medals and match history mirrored.
-- BN and NAT tools: nominations on the website, the BN Management site, Project Loved.
+- BN and NAT tools: nominations and the BN panel on the website, Project Loved.
 - Bot accounts, IRC, achievements under osu!'s ids.
-- Old clients back to 2008 (best tested 2013–2015), TCP bancho and TomYum.Gateway.
+- Old clients back to 2008 (every build to 2015), TCP bancho and TomYum.Gateway.
 - Operations: the watchdog, nightly backups, `deploy.sh`, Prometheus metrics.
 
 ## Not done yet
@@ -60,9 +52,6 @@ The goal for `1.0.0`: TomYum runs anyone's server without somtum.fun's choices b
   after that.
 - **Object storage** (S3, R2, Spaces, B2): only the design exists. Files live on the `server-data`
   volume.
-- **Old clients**: more builds tested one by one, a real pre-2014 build through the gateway, and
-  anti-cheat and verification for old builds. Paused for now: the priorities are the latest lazer,
-  stable 2023+ and anti-cheat.
 - **The Discord bot and circleguard** replay checks were moved out of the core, to come back as
   plugins.
 - Guest difficulties uploaded on their own from lazer, and custom lazer rulesets.

@@ -70,5 +70,5 @@ them at your database first.
 ## Before a big update
 
 - Take a backup: `./backup.sh` ([backups](/operations/backups)).
-- Read the commits since your last update. TomYum is `0.x-dev`: there are no stable releases or
-  upgrade notes yet.
+- Read the commits since your last update. Before `1.0.0` a minor version (`0.5` to `0.6`)
+  can change settings or behaviour, and there are no upgrade notes yet.

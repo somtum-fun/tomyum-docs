@@ -6,7 +6,8 @@ hero:
   text: An osu! server in C#
   tagline: For lazer, stable and clients back to 2008. Open source, MIT licensed, and the base of the server somtum.fun runs.
   image:
-    src: /logo.png
+    light: /logo.png
+    dark: /logo-dark.png
     alt: TomYum
   actions:
     - theme: brand

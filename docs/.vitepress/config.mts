@@ -1,16 +1,19 @@
 import { defineConfig } from 'vitepress'
 
-// The docs for TomYum-OSS. Served at docs.blueskychan.dev for now (docs.somtum.fun once TomYum-OSS is
-// production ready), so links stay relative and nothing here names the host.
+// The docs for TomYum-OSS, served at docs.somtum.fun. Links stay relative, so nothing else here names the host.
 export default defineConfig({
   title: 'TomYum',
   description: 'How to run TomYum-OSS, an osu! server written in C# for lazer, stable and older clients.',
   lang: 'en-GB',
   cleanUrls: true,
   lastUpdated: true,
-  head: [['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }]],
+  sitemap: { hostname: 'https://docs.somtum.fun' },
+  head: [
+    ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
+  ],
   themeConfig: {
-    logo: '/logo.png',
+    logo: { light: '/logo.png', dark: '/logo-dark.png', alt: 'TomYum' },
     nav: [
       { text: 'Guide', link: '/guide/introduction' },
       { text: 'Reference', link: '/reference/configuration' },
