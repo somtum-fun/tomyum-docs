@@ -71,6 +71,8 @@ copied to `tomyum.env`. Everything here is optional.
 | Name | What it does | Default |
 |---|---|---|
 | `TOMYUM_RANKING__CLEARSCORESONRANK` | Delete a difficulty's scores when it becomes ranked or approved; `false` keeps them | `true` |
+| `TOMYUM_RANKING__INACTIVEDAYS` | A player with no score in a mode for this many days leaves that mode's rankings until the next score (stats stay); the website's `TOMYUM_RANKING_INACTIVE_DAYS` must match. `0` keeps everyone ranked | `0` |
+| `TOMYUM_BANCHO__BOTUSERID` | BanchoBot's user id (the website's `BANCHO_BOT_USER_ID` must match); a server imported from bancho.py may put the bot at `2` so the owner keeps `3` | `3` |
 | `TOMYUM_CLIENTVERIFICATION__ENABLED` | New devices must be confirmed on the website ([stable](/clients/stable#device-verification)) | `false` |
 | `TOMYUM_CLIENTVERIFICATION__OLDCLIENTS` | Builds before b20151228: `Unverified` or `Refuse` | `Unverified` |
 | `TOMYUM_CLIENTVERIFICATION__DOWNLOADSURL` | Where refused old clients are sent | `https://osu.<domain>/home/download` |
@@ -180,6 +182,7 @@ copied to `osu-web.env`. These are osu-web's own settings plus the fork's.
 | `TRUSTED_PROXIES` | Trust Caddy and the tunnel's forwarded headers (not `*`, which is ignored) | `PRIVATE_SUBNETS` |
 | `BANCHO_BOT_USER_ID` | BanchoBot's user id | `3` |
 | `TOMYUM_MANAGES_RANKING` | TomYum manages ranking | `true` |
+| `TOMYUM_RANKING_INACTIVE_DAYS` | The rankings' inactivity rule, the same number as TomYum's `TOMYUM_RANKING__INACTIVEDAYS` | `0` |
 | `CLIENT_CHECK_VERSION` | Check lazer builds (players use the stock client) | `false` |
 | `REGISTRATION_MODE_WEB` | Allow sign-ups on the website (in-game sign-up always works) | `true` |
 | `USER_BYPASS_VERIFICATION` | Skip emailed login codes; keep `true` without a mail server | `true` |
