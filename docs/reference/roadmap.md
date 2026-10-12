@@ -1,6 +1,6 @@
 # Roadmap
 
-TomYum is at `0.5.0`, its first production-ready release. `0.6.0` to `1.0.0` bring small fixes,
+TomYum is at `0.5.0`, its first stable release. `0.6.0` to `1.0.0` bring small fixes,
 scaling and a core generic enough for anyone's server. This page sums up what's done and what's left;
 the checklist is [docs/ROADMAP.md](https://github.com/somtum-fun/TomYum-OSS/blob/main/docs/ROADMAP.md).
 
@@ -11,7 +11,7 @@ the checklist is [docs/ROADMAP.md](https://github.com/somtum-fun/TomYum-OSS/blob
 | `0.1.0-dev` | 2026-07-07 | `.osu` cache, pp sidecar, database migrations, the plugin host |
 | `0.2.0-dev` | 2026-10-01 | lazer and the website as accounts and scores, moderation and the staff panels, anti-cheat hooks, IRC, bot accounts, BN/NAT tools, maintenance mode, support tickets |
 | `0.3.0-dev` | 2026-10-03 | Old clients, Relax/Autopilot with Akatsuki pp, pp reworks and pp library updates from the admin panel, the watchdog, metrics as a plugin, tickets from any IMAP mailbox |
-| `0.5.0` | 2026-10-12 | Production-ready: old clients finished (2008 to 2015), stable sessions fixed, ranking rules (days in qualified, an inactivity rule), a bancho.py importer, a security review of the whole server and its fixes |
+| `0.5.0` | 2026-10-12 | First stable release: old clients finished (2008 to 2015), stable sessions fixed, ranking rules (days in qualified, an inactivity rule), a bancho.py importer, a security review of the whole server and its fixes |
 
 ## 0.6.0 to 1.0
 
