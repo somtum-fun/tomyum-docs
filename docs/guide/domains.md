@@ -29,8 +29,8 @@ Optional, and **not** through the tunnel (raw TCP, so DNS only, not proxied):
 | `irc.` | 6667 | [IRC](/features/irc) |
 | `server.` | 13380-13384 | TCP bancho for builds up to b20130802.1 ([old clients](/clients/old-clients), [gateway](/operations/gateway)) |
 
-Other subdomains you may add: `bn.` for [BN Management](/features/qat), and `session.` for the
-[Session plugin](/operations/plugins#the-session-plugin). The tracked Caddyfile has neither.
+You can add more subdomains of your own (a status page, a BN tool); the tracked Caddyfile doesn't
+answer them.
 
 ## How `osu.` is split
 

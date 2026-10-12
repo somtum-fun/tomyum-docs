@@ -45,5 +45,5 @@ Every change is in the staff log (`bot.*`). BanchoBot is the server's own and is
 ## Bots and OAuth
 
 The website lets an OAuth client owned by a bot account act as it (`delegate` scope, client
-credentials), as osu! does for chat bots. That's how, for example, [BN Management](/features/qat)
-can send in-game messages.
+credentials), as osu! does for chat bots. That's how a tool of your own (a BN
+application site, a tournament bot) can send in-game messages.

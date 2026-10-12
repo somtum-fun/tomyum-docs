@@ -42,8 +42,8 @@ it (see [pp reworks](/features/pp-reworks)). Custom lazer rulesets aren't suppor
 - [Custom beatmaps](/features/custom-beatmaps): uploaded from the staff panel or submitted from
   either game's editor, next to the official ones.
 - osu!direct, favourites, screenshots, in-game comments, star ratings with mods.
-- Beatmap hype and nominations on the website, with a [BN Management site](/features/qat) if you
-  want one.
+- Beatmap hype and nominations on the website, the BN panel and the NAT's tools
+  ([BNs and the NAT](/features/bn)).
 - [Achievements](/features/achievements) (medals) under osu!'s own ids.
 - Rank history for every mode, seasonal backgrounds from the admin panel.
 - Moderation: restrictions, silences, a chat log, score removal and staff panels on the website.

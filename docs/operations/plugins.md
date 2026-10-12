@@ -83,18 +83,7 @@ own their own tables.
 | Folder | Id | What |
 |---|---|---|
 | `plugins/tomyum-metrics` | `tomyum.metrics` | Prometheus metrics at `/metrics` ([monitoring](/operations/monitoring#prometheus-metrics)) |
-| `plugins/tomyum-session` | `tomyum.session` | Website logins for a server **without** osu-web (below) |
 | `plugins/examples` | | A compiled and a loose-source example |
-
-### The Session plugin
-
-`tomyum.session` is a login API for a custom website frontend: it checks a player's password, hands
-out a session token (also as a cookie), and lists and revokes sessions. It serves on the `session.`
-subdomain and needs to be trusted (it owns a `sessions` table).
-
-It reads TomYum's own `users` table, so it **doesn't see website (osu-web) accounts**: with the
-standard stack, leave it off. Its settings and routes are in
-[docs/session-plugin.md](https://github.com/somtum-fun/TomYum-OSS/blob/main/docs/session-plugin.md).
 
 ## Writing one
 

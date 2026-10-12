@@ -1,7 +1,8 @@
 # Roadmap
 
-TomYum is at `0.3.0-dev`: used in production for stable, lazer and the website, but not yet
-`1.0.0`. This page sums up what's done and what's left; the full checklist is
+TomYum is at `0.3.0-dev`: used in production for stable, lazer and the website. `0.5.0` is the
+first production-ready release; `0.6.0` to `1.0.0` bring fixes and scaling. This page sums up what's
+done and what's left; the full checklist is
 [docs/ROADMAP.md](https://github.com/somtum-fun/TomYum-OSS/blob/main/docs/ROADMAP.md).
 
 ## Versions
@@ -12,7 +13,16 @@ TomYum is at `0.3.0-dev`: used in production for stable, lazer and the website, 
 | `0.2.0-dev` | 2026-10-01 | lazer and the website as accounts and scores, moderation and the staff panels, anti-cheat, Discord bot, IRC, bot accounts, BN/NAT tools, maintenance mode, support tickets |
 | `0.3.0-dev` | 2026-10-03 | Old clients (2013–2015 through Titanic! Hook, TCP bancho for older builds), Relax/Autopilot with Akatsuki pp, pp reworks and pp library updates from the admin panel, the watchdog, metrics as a plugin, tickets from any IMAP mailbox, the server's own name in the bot's posts |
 
-## Before 1.0
+## 0.5.0: production-ready
+
+- [x] Old clients finished: every build from 2008 to 2015.
+- [x] Stable sessions: no double logins or "already logged in" after closing the game; idle sessions
+      end after a minute; staff changes reconnect the player.
+- [x] A bancho.py importer, and ranking rules (an inactivity rule, days in qualified).
+- [x] A security review of the whole server, and its fixes.
+- [ ] Release `0.5.0` without `-dev`.
+
+## 0.6.0 to 1.0
 
 The goal for `1.0.0`: TomYum runs anyone's server without somtum.fun's choices baked in.
 
@@ -22,7 +32,8 @@ The goal for `1.0.0`: TomYum runs anyone's server without somtum.fun's choices b
 - [ ] Clean-up: dead code and leftovers (the unused `Storage` stubs until they're implemented).
 - [ ] Docs for operators and contributors, a changelog per version, a licence review. (This site is
       part of that.)
-- [ ] A security review: admin API signing, InterOp, uploads, OAuth.
+- [ ] Scaling: a bigger machine, then the databases on their own, copies of what's stateless, and
+      bancho on several machines; object storage; Kubernetes.
 - [ ] Then `1.0.0` without `-dev`, and SemVer from there.
 
 ## Done
@@ -52,7 +63,6 @@ The goal for `1.0.0`: TomYum runs anyone's server without somtum.fun's choices b
 - **Old clients**: more builds tested one by one, a real pre-2014 build through the gateway, and
   anti-cheat and verification for old builds. Paused for now: the priorities are the latest lazer,
   stable 2023+ and anti-cheat.
-- **The Session plugin**'s feature endpoints (it only has the login core).
 - **The Discord bot and circleguard** replay checks were moved out of the core, to come back as
   plugins.
 - Guest difficulties uploaded on their own from lazer, and custom lazer rulesets.

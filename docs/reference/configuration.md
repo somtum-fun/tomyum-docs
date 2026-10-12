@@ -223,7 +223,7 @@ See [tickets](/features/tickets).
 
 ### Account connections
 
-Used by [BN Management](/features/qat) applications.
+The website's Connections page (account settings), for linking an osu! account or Discord.
 
 | Name | What it does |
 |---|---|

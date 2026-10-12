@@ -30,6 +30,7 @@ export default defineConfig({
         items: [
           { text: 'Try it locally', link: '/guide/local-testing' },
           { text: 'Production with Docker Compose', link: '/guide/production' },
+          { text: 'Setting up your domain', link: '/guide/domain-setup' },
           { text: 'Domains, DNS and Caddy', link: '/guide/domains' },
           { text: 'The website (osu-web)', link: '/guide/osu-web' },
           { text: 'Moving from bancho.py', link: '/guide/migrating' },
@@ -56,7 +57,7 @@ export default defineConfig({
           { text: 'Loved', link: '/features/loved' },
           { text: 'pp reworks', link: '/features/pp-reworks' },
           { text: 'Tickets', link: '/features/tickets' },
-          { text: 'BN Management (qat)', link: '/features/qat' },
+          { text: 'BNs and the NAT', link: '/features/bn' },
         ],
       },
       {
@@ -67,6 +68,13 @@ export default defineConfig({
           { text: 'Backups', link: '/operations/backups' },
           { text: 'Gateway', link: '/operations/gateway' },
           { text: 'Troubleshooting', link: '/operations/troubleshooting' },
+        ],
+      },
+      {
+        text: 'Developers',
+        items: [
+          { text: 'Project structure', link: '/develop/project-structure' },
+          { text: 'Contributing and code style', link: '/develop/contributing' },
         ],
       },
       {

@@ -127,6 +127,10 @@ Cloudflare ends HTTPS; the tunnel carries every request to the stack's Caddy ove
 2. Add a public hostname for each of the game's and website's subdomains, all with the service
    `http://caddy:80`. The list is on [Domains, DNS and Caddy](/guide/domains).
 
+New to Cloudflare, or would rather not use the tunnel? [Setting up your domain](/guide/domain-setup)
+goes through it step by step, including the other way in: proxied DNS records with an Origin
+Certificate and Caddy on the host.
+
 ## 5. Start it
 
 ```bash
