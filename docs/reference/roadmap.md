@@ -42,16 +42,17 @@ The goal for `1.0.0`: TomYum runs anyone's server without somtum.fun's choices b
 - Bot accounts, IRC, achievements under osu!'s ids.
 - Old clients back to 2008 (every build to 2015), TCP bancho and TomYum.Gateway.
 - Operations: the watchdog, nightly backups, `deploy.sh`, Prometheus metrics.
+- The Discord bot and circleguard's replay checks moved out of the core into plugins (`tomyum.discord`,
+  `tomyum.circleguard`). Those two are somtum.fun's and not published; the plugin API they use is.
 
 ## Not done yet
 
-- **Custom medals.**
+- **Custom medals.** somtum.fun's TomYum has them (players ask, a Medal Team approves); they aren't in
+  TomYum-OSS yet.
 - **Running bancho on several machines.** Online state (players, channels, matches, spectating) lives
   in one process, so bancho runs as one copy. The plan, in order: scale up; split MySQL, Redis and
   Elasticsearch out; replicas of what's stateless; then online state in Redis. Kubernetes waits until
   after that.
 - **Object storage** (S3, R2, Spaces, B2): only the design exists. Files live on the `server-data`
   volume.
-- **The Discord bot and circleguard** replay checks were moved out of the core, to come back as
-  plugins.
 - Guest difficulties uploaded on their own from lazer, and custom lazer rulesets.

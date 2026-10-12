@@ -47,4 +47,4 @@ production compose file).
 
 TomYum's own unlocks are in its `user_achievements` table; the website's in `osu_user_achievements`.
 
-Custom medals aren't supported yet.
+Custom medals aren't in TomYum-OSS yet (somtum.fun's TomYum has them).

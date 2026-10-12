@@ -65,6 +65,6 @@ it (see [pp reworks](/features/pp-reworks)). Custom lazer rulesets aren't suppor
 
 ## Not done yet
 
-Custom medals, online state shared between several TomYum instances (so bancho runs as one copy),
+Custom medals (somtum.fun's TomYum has them, TomYum-OSS not yet), online state shared between several TomYum instances (so bancho runs as one copy),
 and object storage (files live on a Docker volume). The [roadmap](/reference/roadmap) has the
 details.
