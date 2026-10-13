@@ -70,6 +70,15 @@ Only builds from b20151228 on can be asked to verify. Older builds follow
 If you want original old builds on your server, leave verification off: see
 [old clients](/clients/old-clients#device-verification).
 
+## Wrong passwords {id=wrong-passwords}
+
+Every password check (the game's login, the `/web` endpoints, IRC) counts wrong guesses for 15
+minutes. An address that guesses wrong 10 times for an account is refused for it, even with the right
+password, until then. Once an account has had 10 wrong guesses from anywhere, an address that guessed
+wrong 3 times is refused too. An address that hasn't been guessing, such as the player's own game, is
+never refused, so nobody can lock a player out by guessing their name. One address is also refused
+after 30 wrong guesses across accounts. Repeating the same wrong password counts once.
+
 ## The tournament client
 
 osu!'s tournament client logs in once per window, all with the same account. Those windows are extra

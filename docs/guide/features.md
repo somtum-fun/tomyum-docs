@@ -32,7 +32,8 @@ it (see [pp reworks](/features/pp-reworks)). Custom lazer rulesets aren't suppor
 
 - Login and in-game registration, one account for stable, lazer and the website.
 - Score submission and leaderboards (global, selected mods, friends, country), with replays.
-- Chat: channels, PMs, away messages, friends-only PMs, friends shared with lazer and the website.
+- Chat: channels, PMs, away messages, friends-only PMs, friends shared with lazer and the website. The
+  website's blocks and "friends only" setting apply to in-game PMs too, and `#announce` is staff-only.
 - BanchoBot with `!` commands, and an [IRC server](/features/irc) on port 6667 for IRC clients and
   [bots](/features/bots).
 - Multiplayer: lobby, rooms, the full match lifecycle, `!mp` commands, match history on the website.

@@ -125,7 +125,9 @@ That's it for the tunnel: skip to [step 5](#_5-cloudflare-settings).
 
    Then `sudo systemctl reload caddy`.
 6. **Only let Cloudflare in.** The stack trusts the `Cf-Connecting-Ip` header for the player's
-   address. Anyone who finds the machine's real address could connect to it directly and send a fake
+   address. (TomYum itself only believes `X-Real-IP` and `CF-IPCountry` from a loopback or
+   private-network address, the stack's Caddy; anything reaching it directly is taken at its
+   connection's address.) Anyone who finds the machine's real address could connect to it directly and send a fake
    one (to dodge IP bans or rate limits), so allow ports 80 and 443 from
    [Cloudflare's addresses](https://www.cloudflare.com/ips/) only, for example with `ufw`:
 

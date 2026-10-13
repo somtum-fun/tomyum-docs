@@ -14,6 +14,17 @@ the same account. TomYum treats those windows as extra sessions:
   game spectating does.
 - Closing a window only ends that window's session.
 
+### Who can follow a match {id=who-can-follow}
+
+A tournament client is whatever says so in its version string, so following a match (its chat and
+state) is limited to:
+
+- staff (moderators, administrators, developers);
+- the Tournament Committee: members of the website's `tc` group;
+- the room's own host and players.
+
+Restricted accounts never can. Windows following a match never get the room's password.
+
 Nothing needs turning on. The code is in
 [`TournamentHandlers.cs`](https://github.com/somtum-fun/TomYum-OSS/blob/main/src/TomYum.Server/Bancho/Packets/TournamentHandlers.cs)
 and the login handler.
