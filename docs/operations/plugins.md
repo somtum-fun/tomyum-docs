@@ -32,6 +32,18 @@ A loose-source folder's `plugin.json`:
 
 Examples of both shapes are in [`plugins/examples`](https://github.com/somtum-fun/TomYum-OSS/tree/main/plugins/examples).
 
+## Example plugins
+
+Real plugins that run on somtum.fun, all loose source and good to read before writing your own:
+
+| Plugin | What it shows |
+|---|---|
+| [tomyum-plugin-template](https://github.com/somtum-fun/tomyum-plugin-template) | The starting point: a compiled and a loose-source plugin, with a `!` command, an event and a setting. |
+| [tomyum-bpy-api](https://github.com/somtum-fun/tomyum-bpy-api) | bancho.py's public v1 API on TomYum's data, so tools made for bancho.py keep working: HTTP routes on their own host, and read-only queries through trusted database access. |
+| [tomyum-votes-plugins](https://github.com/somtum-fun/tomyum-votes-plugins) | Votes from osu-server-list.com: a callback URL with a key, its own table, osu!direct time as a reward (`ClientPerksEvent`), a BanchoBot message and a `!vote` command. |
+
+Questions about writing one: [#discussion](/guide/community) on the Discord server.
+
 ## Installing one in production
 
 The production image has no plugins in it, and the tracked compose file mounts none. Mount each

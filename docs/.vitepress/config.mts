@@ -26,6 +26,7 @@ export default defineConfig({
           { text: 'What is TomYum?', link: '/guide/introduction' },
           { text: 'Features', link: '/guide/features' },
           { text: 'Requirements', link: '/guide/requirements' },
+          { text: 'Community and help', link: '/guide/community' },
         ],
       },
       {
@@ -88,7 +89,10 @@ export default defineConfig({
         ],
       },
     ],
-    socialLinks: [{ icon: 'github', link: 'https://github.com/somtum-fun/TomYum-OSS' }],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/somtum-fun/TomYum-OSS' },
+      { icon: 'discord', link: 'https://discord.gg/U6Ztb3mRyz' },
+    ],
     editLink: {
       pattern: 'https://github.com/somtum-fun/tomyum-docs/edit/main/docs/:path',
       text: 'Edit this page on GitHub',

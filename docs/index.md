@@ -19,6 +19,9 @@ hero:
     - theme: alt
       text: GitHub
       link: https://github.com/somtum-fun/TomYum-OSS
+    - theme: alt
+      text: Discord
+      link: /guide/community
 
 features:
   - title: Every client
