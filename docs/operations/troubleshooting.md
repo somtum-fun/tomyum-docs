@@ -13,6 +13,17 @@ The website's user groups aren't there yet. Run `tomyum:setup`, then start the s
 docker compose run --rm artisan tomyum:setup
 ```
 
+### `migrate` fails with "Unknown database 'osu_chat'"
+
+The website uses several databases (`osu`, `osu_chat`, `osu_store`, …). `mysql-init.sh` creates
+them on MySQL's **first** start, but older copies of it only created the `osuweb` account, so a
+`mysql-data` volume made with one only has `osu`. Create the missing ones, then migrate again:
+
+```bash
+docker compose run --rm artisan db:create
+docker compose run --rm artisan migrate --force
+```
+
 ### The server, spectator or notification server won't start: a mount of `oauth-public.key` fails
 
 They mount the website's Passport public key from its storage volume, which only exists once the keys
@@ -21,6 +32,17 @@ are made:
 ```bash
 docker compose run --rm artisan passport:keys
 docker compose up -d
+```
+
+### The notification server restarts with "EACCES: permission denied, open '/app/oauth-public.key'"
+
+`passport:keys` can write the key readable only by the website's user, and the notification server
+runs as another one. The stack's `volumes-init` now fixes the mode on every `up`; on an older
+compose file, once:
+
+```bash
+docker compose exec -u 0 php chmod 644 /app/storage/oauth-public.key
+docker compose restart notification-server
 ```
 
 ### Docker Compose complains about `subpath`

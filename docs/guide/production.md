@@ -105,8 +105,8 @@ docker compose run --rm artisan key:generate --show
 ```
 
 Then set up the website's database. `artisan` runs one-off website commands; it starts MySQL and
-Redis for you, and MySQL's first start creates the `osuweb` account everything shares
-(`mysql-init.sh`).
+Redis for you, and MySQL's first start creates the databases and the `osuweb` account everything
+shares (`mysql-init.sh`).
 
 ```bash
 docker compose run --rm artisan migrate --force   # the website's tables
@@ -116,7 +116,9 @@ docker compose run --rm artisan tomyum:setup      # groups, genres, countries, f
 
 `tomyum:setup` must run before TomYum's first start: TomYum refuses to start without the website's
 user groups. `passport:keys` must run before the first `up`: the server, the spectator server and
-the notification server mount `oauth-public.key` from the website's storage volume.
+the notification server mount `oauth-public.key` from the website's storage volume. (`tomyum:setup`
+ends asking for a `restart php`; on a first install the website isn't running yet, so there's
+nothing to restart.)
 
 ## 4. The Cloudflare Tunnel
 
