@@ -120,7 +120,7 @@ The `Id` in the manifest is the plugin's identity **and** its settings key: keep
 | `Commands` | `Register(name, description, handler)`: a `!` command (built-in names can't be taken) |
 | `Events` | `Subscribe<TEvent>(handler)`: react to server events |
 | `Http` | `Map(method, pattern, handler, requireAuth, subdomain)`: serve HTTP, optionally on its own subdomain |
-| `GetHostService<T>()` | `IHostPlayerView` (who's online, doing what), `IHostOnlineCounts` (players by client, open rooms), `IHostMessenger` (a BanchoBot message or notification to a stable player), `IHostSpectating` (BanchoBot spectates a stable player) |
+| `GetHostService<T>()` | `IHostPlayerView` (who's online, doing what), `IHostOnlineCounts` (players by client, open rooms), `IHostMessenger` (a BanchoBot message or notification to a stable player), `IHostSpectating` (BanchoBot spectates a stable player; `BotName` is the bot's name from `Bancho:BotName`) |
 | `Data` | A raw `DbConnection`, only for trusted plugins; otherwise `null` |
 
 Events:
