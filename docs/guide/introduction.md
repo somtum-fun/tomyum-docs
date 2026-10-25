@@ -37,7 +37,7 @@ so profiles, rankings and beatmap leaderboards fill up as people play.
 
 ## Status
 
-TomYum is at version `0.5.5` (`0.5.0` was its first stable release). The
+TomYum is at version `0.6.0` (`0.5.0` was its first stable release). The
 [roadmap](/reference/roadmap) lists what's left before `1.0.0`: scaling, object storage, and taking the
 remaining somtum.fun-specific choices out of the code.
 

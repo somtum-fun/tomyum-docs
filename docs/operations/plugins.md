@@ -117,11 +117,31 @@ The `Id` in the manifest is the plugin's identity **and** its settings key: keep
 |---|---|
 | `Config` | The plugin's settings (`Plugins:<id>`): `Get<T>(key, default)` or `Bind<TOptions>()` |
 | `Logger` | `Info` / `Warn` / `Error`, tagged with the plugin id |
-| `Commands` | `Register(name, description, handler)`: a `!` command (built-in names can't be taken) |
+| `Commands` | `Register(name, description, handler)`: a `!` command (built-in names can't be taken). `Register(..., new CommandOptions { RequiredGroups = ["gmt"], Usage = "<player>", Hidden = false })` limits it to website groups (owners and developers always pass) and shapes its `!help` line; the handler's `CommandInvocation` has `InvokerUsername` and `InvokerGroups` |
 | `Events` | `Subscribe<TEvent>(handler)`: react to server events |
 | `Http` | `Map(method, pattern, handler, requireAuth, subdomain)`: serve HTTP, optionally on its own subdomain |
-| `GetHostService<T>()` | `IHostPlayerView` (who's online, doing what), `IHostOnlineCounts` (players by client, open rooms), `IHostMessenger` (a BanchoBot message or notification to a stable player), `IHostSpectating` (BanchoBot spectates a stable player; `BotName` is the bot's name from `Bancho:BotName`) |
+| `GetHostService<T>()` | Host services: see below |
 | `Data` | A raw `DbConnection`, only for trusted plugins; otherwise `null` |
+| `State` | The plugin's own key/value store with expiry (`GetAsync`, `SetAsync(key, value, ttl)`, `RemoveAsync`): Redis when the server has it, memory otherwise |
+| `Scheduler` | `Every(interval, handler)`: recurring work (at least a second apart, never overlapping itself), stopped when the plugin unloads |
+| `PublishHostService<T>(service)` | Offer a service to other plugins (a type from `TomYum.Plugins.Abstractions`) |
+
+Host services (`GetHostService<T>()`, null when the server lacks what one needs). The last four are for
+**trusted** plugins only:
+
+| Service | What it does |
+|---|---|
+| `IHostPlayerView` | Who's online and doing what |
+| `IHostOnlineCounts` | Players by client (stable, IRC, lazer), open multiplayer rooms |
+| `IHostMessenger` | A BanchoBot message or a notification to an online stable player |
+| `IHostSpectating` | BanchoBot spectates a stable player, so `SpectateFrameEvent` fires; `BotName` is the bot's name |
+| `IHostBeatmaps` | A map by id or MD5 (fetched when unknown), and its cached `.osu` file |
+| `IHostPerformance` | pp with the server's own calculators, full-combo pp at given accuracies, star rating with mods |
+| `IRulesetRegistry` | The custom lazer rulesets the website turned on (see [Custom rulesets](/features/custom-rulesets)), and any ruleset's name |
+| `IHostCommands` | Run a BanchoBot command as an account (offline too), with its permission checks, staff log and effect; or as BanchoBot |
+| `IHostAccounts` | An account's groups, restriction, silence and supporter end, anti-cheat whitelist, bot flag |
+| `IHostChat` | Say a line in a channel as a player (game, website, chat log), unless they're restricted or silenced; tagged with the relay's origin |
+| `IHostReplays` | A score's replay as a complete `.osr` (lazer's from the spectator server, stable's built from the stored data) |
 
 Events:
 
@@ -130,8 +150,20 @@ Events:
 - `ChatMessageEvent`
 - `ActionChangedEvent` (a player's status, with map, mods and client build)
 - `SpectateFrameEvent` (a spectated player's frame bundle)
-- `ScoreSubmittingEvent`, **vetoable**: call `Veto(reason)` to reject the score
+- `ScoreSubmittingEvent`, **vetoable**: call `Veto(reason)` to reject the score, or `Veto(reason, playerMessage)`
+  to also tell the player why (an in-game notification)
 - `ScoreSubmittedEvent` (a stable score was stored, failed plays too; not for lazer)
+- `ChatRecordedEvent` (a chat message anywhere: game, IRC, website, lazer or a relay, with its origin)
+- `ServerErrorEvent` (the server logged an error; once a minute per category, ten a minute in all)
+
+Feed events come from the website's tables and the staff log, a few seconds after the data is stored, in
+order, starting from what's new after the server started (and only read while a plugin listens):
+
+- `StaffLogEvent` (a staff log entry)
+- `ScoreProcessedEvent` (a score with its pp: stable once on the website, lazer once ppy's processor is done;
+  `RulesetId` 10 and up for [custom rulesets](/features/custom-rulesets))
+- `MedalAwardedEvent`, `UserRegisteredEvent`, `ReportFiledEvent`
+- `BeatmapStatusChangedEvent` (staff, the website's BNs, or `Automatic`, e.g. a qualified set becoming ranked)
 
 ```csharp
 public Task InitializeAsync(IPluginContext context, CancellationToken ct = default)

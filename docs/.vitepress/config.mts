@@ -60,6 +60,7 @@ export default defineConfig({
           { text: 'Achievements', link: '/features/achievements' },
           { text: 'Loved', link: '/features/loved' },
           { text: 'pp reworks', link: '/features/pp-reworks' },
+          { text: 'Custom rulesets', link: '/features/custom-rulesets' },
           { text: 'Tickets', link: '/features/tickets' },
           { text: 'BNs and the NAT', link: '/features/bn' },
         ],
