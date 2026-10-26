@@ -24,6 +24,18 @@ their own leaderboards and rankings, **by score** (there's no pp for them). Staf
 5. **Rankings**: `/rankings/rulesets/{slug}` ranks players by ranked score (their best on each ranked map,
    added up), worldwide or in one country. The rankings' mode selector has a **…** menu for them.
 
+6. **Profiles**: the profile's ruleset bar has a **…** menu for them; each shows the player's rank, ranked
+   score and plays in that ruleset, with Vanilla / Relax / Autopilot boards.
+
+## In the API
+
+The website's osu! API (v2) takes a ruleset's slug where it takes a ruleset name: `GET /users/{user}/{slug}` and
+`/me/{slug}` (that ruleset's statistics, plus `custom_ruleset`), `GET /users/{user}/scores/{type}?mode={slug}`,
+`GET /beatmaps/{id}/scores?mode={slug}` and `GET /rankings/{slug}/score`, each with `variant` (`vanilla`,
+`relax`, `autopilot`). A custom ruleset's score has `ruleset_id` 10 and up and `custom_ruleset`
+(`{id, slug, name}`); in the old score format its `mode` stays `osu`. The website's `/docs` page (section
+Ruleset, Custom rulesets) has the details.
+
 When the author releases a new version, **Pin again** moves to it and players update from the client's
 settings. Turning a ruleset off stops new plays submitting; its scores stay.
 
@@ -36,4 +48,4 @@ TomYum's own first places and rank #1 announcements stay with osu!'s four rulese
 ## Not (yet) supported
 
 osu!(stable) can't play them (its mode is one byte, 0-3), and there's no multiplayer, spectating, replays or
-pp for them. Profiles don't have tabs for them yet.
+pp for them.
