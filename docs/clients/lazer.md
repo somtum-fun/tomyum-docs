@@ -119,6 +119,7 @@ TOMYUM_LASTFM__APIKEY=
 TOMYUM_LASTFM__APISECRET=
 ```
 
-## Not supported yet
+## Custom rulesets
 
-Custom lazer rulesets (Sentakki, tau, Rush!, …).
+Custom lazer rulesets from rulesets.info (sentakki, tau, Rush!, …) are supported, ranked by score: see
+[custom rulesets](/features/custom-rulesets).
