@@ -31,10 +31,24 @@ checkout (`OSU_WEB_PATH`) with osu-web's own `Dockerfile.deployment`.
 - **Relax and Autopilot** have their own profiles and rankings on the website (a Vanilla/RX/AP
   switch), with TomYum's pp.
 - **Global rank** is worked out after every play, leaving out restricted and banned accounts.
+- **Converted maps' star ratings**: every few minutes TomYum works out osu! maps' taiko, catch and mania
+  star ratings and stores the ones the website's `osu_beatmap_difficulty` doesn't have yet (without them a
+  convert showed 0★), so new imports and uploads get theirs on the next run.
 - **New scores** are queued for the website's score indexer, so leaderboards and profiles update by
   themselves while the `score-indexer` service runs.
 - **Maps and new players** are reachable by URL at once (`/beatmapsets/<id>`, `/users/<id>`), but
   appear in listings and search only after indexing (see [production](/guide/production#_8-keep-it-running)).
+
+## pp history and pp if ranked
+
+- **pp history**: once a day TomYum keeps every player's total pp in every mode (osu!'s four rulesets from
+  the website, Relax and Autopilot from TomYum; restricted players left out), for a year (`pp_history`).
+  `GET /_admin/users/{id}/pp-history/{mode}?days=90` gives a player's days (7 to 365), oldest first, for a
+  pp-over-time graph on their profile.
+- **pp if ranked**: `GET /_admin/pp-if-ranked?website={score id}` (a website play) or `?mode={id}` (a
+  Relax/Autopilot play) gives what a pass on a map without pp (loved, qualified, pending, graveyard) would
+  be worth if the map were ranked, from its own judgements, combo and mods. Meant to be shown greyed out; it
+  never counts. A custom ruleset's play gets none.
 
 ## InterOp
 

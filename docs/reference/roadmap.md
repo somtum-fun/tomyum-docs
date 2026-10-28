@@ -1,6 +1,6 @@
 # Roadmap
 
-TomYum is at `0.6.0`; `0.5.0` was its first stable release. `0.6.0` to `1.0.0` bring small fixes,
+TomYum is at `0.7.0`; `0.5.0` was its first stable release. `0.6.0` to `1.0.0` bring small fixes,
 scaling and a core generic enough for anyone's server. This page sums up what's done and what's left;
 the checklist is [docs/ROADMAP.md](https://github.com/somtum-fun/TomYum-OSS/blob/main/docs/ROADMAP.md).
 
@@ -13,6 +13,7 @@ the checklist is [docs/ROADMAP.md](https://github.com/somtum-fun/TomYum-OSS/blob
 | `0.3.0-dev` | 2026-10-03 | Old clients, Relax/Autopilot with Akatsuki pp, pp reworks and pp library updates from the admin panel, the watchdog, metrics as a plugin, tickets from any IMAP mailbox |
 | `0.5.0` | 2026-10-12 | First stable release: old clients finished (2008 to 2015), stable sessions fixed, ranking rules (days in qualified, an inactivity rule), a bancho.py importer, a security review of the whole server and its fixes |
 | `0.6.0` | 2026-10-25 | A bigger plugin API (command options, commands as a user, accounts, chat, replays, beatmaps, pp, a state store, a scheduler, feed events for scores, medals, registrations, status changes, reports, chat and server errors, a player message on vetoes); [custom lazer rulesets](/features/custom-rulesets) from rulesets.info ranked by score; lazer scores must fit their map (judgements, combo, play time) |
+| `0.7.0` | 2026-10-28 | [lazer Relax/Autopilot plays](/clients/lazer#scores-and-pp) count like stable's (pp from their own mods and judgements, lazer's accuracy, bests and ranked score, the score their client gave); Relax/Autopilot boards with lazer mods' settings, every country in their rankings and their "achieved rank" activity, while the website's #1s count vanilla plays only; [pp history](/guide/osu-web#pp-history-and-pp-if-ranked) and pp if ranked; converts' star ratings on the website; custom rulesets' mods; pre-2024 lazer builds' scores processed; fixes |
 | `0.5.5` | 2026-10-14 | Security fixes: only staff, the Tournament Committee and a room's own players can follow a match from the tournament client, and its watchers never get the room's password; wrong passwords from one address no longer lock the player out elsewhere; `#announce` is staff-only; `X-Real-IP` and `CF-IPCountry` are only believed from your own proxy; the website's blocks and "friends only" apply to in-game private messages |
 
 ## 0.6.0 to 1.0

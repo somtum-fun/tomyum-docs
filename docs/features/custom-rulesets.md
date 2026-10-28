@@ -26,6 +26,10 @@ their own leaderboards and rankings, **by score** (there's no pp for them). Staf
 
 6. **Profiles**: the profile's ruleset bar has a **…** menu for them; each shows the player's rank, ranked
    score and plays in that ruleset, with Vanilla / Relax / Autopilot boards.
+7. **Mods**: `GET /_admin/custom-rulesets/mods?url={the pinned DLL}&sha256={its hash}` lists the mods a player
+   can pick in the ruleset (`[{acronym, name, type}]`), for the boards' mod filters and whether the ruleset has
+   Relax/Autopilot boards. TomYum loads the pinned DLL on its own (osu!'s libraries are the server's) and keeps
+   the answer by its hash.
 
 ## In the API
 

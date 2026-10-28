@@ -49,6 +49,15 @@ TomYum before answering. Maps osu! doesn't know are remembered for an hour.
 - Relax and Autopilot lazer plays go on TomYum's Relax/Autopilot leaderboards, with their pp. The
   score processor waits up to 15 seconds for TomYum to take them in, so the results screen shows the
   play counted.
+- They count like stable's Relax and Autopilot plays: their pp is worked out from the play's own mods
+  (a rate mod at its own speed, Difficulty Adjust's settings) and judgements (slider ends and ticks), as
+  ppy's score processor does; their accuracy is the one lazer shows; a play becomes the player's best,
+  and counts in their ranked and total score, as a stable submission would; and the score is the one the
+  client gave. Their leaderboards show the mods with their settings.
+- The website's own leaderboards, #1s and placements count plays without Relax or Autopilot only; a
+  Relax/Autopilot play's "achieved rank" activity comes from TomYum's board.
+- Scores from lazer builds before 2024 (which don't send a total without mods) are processed: the total
+  without mods is worked back out from the total and osu!'s multiplier for the mods.
 
 ### Ranked mods
 

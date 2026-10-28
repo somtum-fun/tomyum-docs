@@ -149,6 +149,7 @@ The `Performance` settings route modes to pp backends. See
 | `TOMYUM_PERFORMANCE__BACKENDS__<name>__URL` | An `http` backend's address | |
 | `TOMYUM_PERFORMANCE__BACKENDS__<name>__TIMEOUTMS` | Its timeout | `3000` |
 | `TOMYUM_PERFORMANCE__BACKENDS__<name>__FALLBACK` | Backend to use when it fails (else 0 pp) | none |
+| `TOMYUM_PERFORMANCE__VANILLAPP` | Variants worth what the same play without Relax/Autopilot is worth (`relax`, `autopilot`, separated by commas or spaces): a 727pp play is 727pp on those boards too, instead of a relax formula. The variant still picks the route. | none |
 
 ### Plugins
 
