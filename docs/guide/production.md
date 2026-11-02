@@ -18,6 +18,33 @@ Try the stack on your own PC first ([Try it locally](/guide/local-testing)). It'
 the moving parts there.
 :::
 
+## Quick install
+
+`deploy/production/setup.sh` does every step on this page for you: it checks the machine, clones the website
+and the spectator server next to TomYum, writes the three settings files with fresh secrets, builds, prepares
+the database and starts the stack. Run it again at any point: it keeps what's filled in and picks up where it
+stopped.
+
+```bash
+git clone https://github.com/somtum-fun/TomYum-OSS.git && cd TomYum-OSS/deploy/production
+
+# With a tunnel you made in Cloudflare Zero Trust (it prints the hostnames to add to it):
+./setup.sh --domain example.com --tunnel-token <token>
+
+# Or let it make the tunnel and the DNS records (an API token with Tunnel and DNS edit rights):
+./setup.sh --domain example.com --cloudflare-api-token <token> --cloudflare-account <account id>
+
+# Or just try it on this machine (no tunnel; the site on http://127.0.0.1:8880):
+./setup.sh --local
+```
+
+Then register on the website or in the game and run `./setup.sh admin <your name>`. `./setup.sh check` shows
+whether every service answers. It needs Docker Engine 27 or newer with Compose 2.25 or newer (Docker's own
+packages: Debian's and Ubuntu's `docker.io` is often too old), git and openssl, about 8 GB of memory and 40 GB
+of disk.
+
+The rest of this page is what it does, step by step, for doing it by hand or understanding what's there.
+
 ## 1. Get the code
 
 `deploy/production` expects the website and the spectator server checked out **next to** TomYum:
