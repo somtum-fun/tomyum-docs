@@ -164,9 +164,9 @@ docker builder prune -af --max-used-space 20GB
 
 ### `backup.sh` can't find the volumes
 
-It expects the compose project to be called `tomyum` (`tomyum_server-data`, …). Set
-`COMPOSE_PROJECT_NAME=tomyum` in `.env`. Changing it on a running server makes Compose create new,
-empty volumes, so check `docker volume ls` first.
+It expects the compose project to be called `tomyum` (`tomyum_server-data`, …), which
+`docker-compose.yml` sets. A `COMPOSE_PROJECT_NAME` in `.env` overrides it. Changing the name on a
+running server makes Compose create new, empty volumes, so check `docker volume ls` first.
 
 ### Watchdog alerts don't arrive
 

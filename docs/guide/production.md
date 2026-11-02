@@ -68,15 +68,8 @@ SHARED_INTEROP_SECRET=             # openssl rand -hex 32
 OSU_WEB_APP_KEY=                   # step 3
 ```
 
-Also add this line to `.env`, before anything is started:
-
-```ini
-COMPOSE_PROJECT_NAME=tomyum
-```
-
-Docker Compose would otherwise name the project after the folder (`production`). The scripts expect
-`tomyum`: `backup.sh` finds the volumes as `tomyum_<name>`, and the pp updater uses the `tomyum_default`
-network.
+The compose project is always called `tomyum` (`name:` in `docker-compose.yml`), whatever the folder:
+`backup.sh` finds the volumes as `tomyum_<name>`, and the pp updater uses the `tomyum_default` network.
 
 `tomyum.env` and `osu-web.env` work as they come. Look through them now anyway: for example
 `TOMYUM_SERVER__NAME` (your server's name in BanchoBot's posts) and the `MAIL_*` settings. Every

@@ -60,8 +60,7 @@ docker compose run --rm -T score-indexer queue pump-all </dev/null              
 ```
 
 ::: warning The project must be called `tomyum`
-`backup.sh` (and the restore above) find the volumes as `tomyum_<name>`. Docker Compose names a
-project after its folder (`production`) unless told otherwise, so set `COMPOSE_PROJECT_NAME=tomyum`
-in `.env` before the first start ([production](/guide/production#_2-fill-in-the-settings)).
-`docker volume ls` shows what yours are called.
+`backup.sh` (and the restore above) find the volumes as `tomyum_<name>`. `docker-compose.yml` names
+the project `tomyum` (since 0.7.1; before, you set `COMPOSE_PROJECT_NAME=tomyum` in `.env`, which still
+wins). `docker volume ls` shows what yours are called.
 :::

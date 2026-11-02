@@ -72,3 +72,10 @@ them at your database first.
 - Take a backup: `./backup.sh` ([backups](/operations/backups)).
 - Read the commits since your last update. Before `1.0.0` a minor version (`0.5` to `0.6`)
   can change settings or behaviour, and there are no upgrade notes yet.
+
+::: warning Updating past 0.7.1: the project name
+`docker-compose.yml` now names the project `tomyum`. If your server never set
+`COMPOSE_PROJECT_NAME=tomyum`, its volumes are called after the folder (`production_server-data`, …) and
+Compose would start on new, empty ones. Check with `docker volume ls` before `up`; if yours start with
+`production_`, add `COMPOSE_PROJECT_NAME=production` to `.env` to keep them.
+:::
