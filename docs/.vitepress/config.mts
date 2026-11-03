@@ -86,6 +86,7 @@ export default defineConfig({
         text: 'Reference',
         items: [
           { text: 'Configuration', link: '/reference/configuration' },
+          { text: 'Score ids', link: '/reference/score-ids' },
           { text: 'Roadmap', link: '/reference/roadmap' },
         ],
       },
