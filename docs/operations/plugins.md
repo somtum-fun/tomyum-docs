@@ -11,7 +11,7 @@ The quickest start for writing one is the template repository,
 
 | Shape | You ship | How it loads |
 |---|---|---|
-| **Compiled** | a built `.dll` in `plugins/` (or a subfolder) | loaded into its own unloadable `AssemblyLoadContext` |
+| **Compiled** | a built `.dll` in `plugins/`, or in a subfolder with the same name as the DLL (`plugins/MyPlugin/MyPlugin.dll`; other folder names are skipped) | loaded into its own unloadable `AssemblyLoadContext` |
 | **Loose source** | a folder with `plugin.json` and `.cs` files | compiled at startup with Roslyn, then loaded the same way |
 
 Compiled is better for real plugins (tooling, tests); loose source is handy for small changes with no
@@ -41,6 +41,17 @@ Real plugins that run on somtum.fun, all loose source and good to read before wr
 | [tomyum-plugin-template](https://github.com/somtum-fun/tomyum-plugin-template) | The starting point: a compiled and a loose-source plugin, with a `!` command, an event and a setting. |
 | [tomyum-bpy-api](https://github.com/somtum-fun/tomyum-bpy-api) | bancho.py's public v1 API on TomYum's data, so tools made for bancho.py keep working: HTTP routes on their own host, and read-only queries through trusted database access. |
 | [tomyum-votes-plugins](https://github.com/somtum-fun/tomyum-votes-plugins) | Votes from osu-server-list.com: a callback URL with a key, its own table, osu!direct time as a reward (`ClientPerksEvent`), a BanchoBot message and a `!vote` command. |
+
+For looking at plays and for anti-cheat, [tomyum-example-plugins](https://github.com/somtum-fun/tomyum-example-plugins)
+has three more to copy from, each with tests:
+
+| Plugin | What it does |
+|---|---|
+| `score-inspector` | `!recent <player>` and `!score <id>` for staff: a player's last plays, and one play read from its replay (mods, hits, combo, pp worked out again, when it was played); a staff-only `.osr` download route |
+| `pp-cap` | A play over its mode's pp cap is sent to staff (`StaffAlertEvent`), or restricted through BanchoBot's `!restrict` if you turn that on; whitelisted players and staff are left alone |
+| `replay-check` | Checks new plays' replays: copied replays, and anything an outside analyzer finds (one built on [circleguard](https://github.com/circleguard/circleguard) is included). It only tells staff, and offers `IScoreCheckService` for on-demand checks |
+
+All three read accounts or replays, so they have to be trusted.
 
 Questions about writing one: [#discussion](/guide/community) on the Discord server.
 
@@ -95,6 +106,7 @@ own their own tables.
 | Folder | Id | What |
 |---|---|---|
 | `plugins/tomyum-metrics` | `tomyum.metrics` | Prometheus metrics at `/metrics` ([monitoring](/operations/monitoring#prometheus-metrics)) |
+| `plugins/tomyum-stable-spectate` | `tomyum.stable-spectate` | Experimental: lazer players see and spectate osu!(stable) players ([spectating](/features/spectating#stable-from-lazer)) |
 | `plugins/examples` | | A compiled and a loose-source example |
 
 ## Writing one

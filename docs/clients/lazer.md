@@ -25,7 +25,8 @@ accounts banned. Remove the DLL to go back.
    then uses `https://osu.example.com/signalr/<hub>`, which Caddy sends to the spectator server), or
    set them to `https://spectator.example.com/spectator`, `/multiplayer` and `/metadata`. Keep the
    default client ID and secret. Turn off the g0v0-server features (the `--non-g0v0-server` option).
-4. Sign in with your normal account from the website.
+4. Sign in with your normal account from the website, or make one with lazer's own **Create account**:
+   TomYum passes lazer's sign-up on to the website, so its sign-up rules apply as they do there.
 
 ## What the server needs (already in the production stack)
 

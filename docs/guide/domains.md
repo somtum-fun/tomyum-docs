@@ -37,7 +37,7 @@ answer them.
 | Request | Goes to |
 |---|---|
 | `/web/*`, `/d/*`, `/beatmap-submission/*`, `/ss/*`, `/difficulty-rating`, `/release/*`, `/rating/*`, `/bpy-api/*` | TomYum |
-| `POST /users` from the stable client (`User-Agent: osu!`, not asking for JSON) | TomYum (in-game registration) |
+| `POST /users` from the game (`User-Agent: osu!`, not asking for JSON) | TomYum: stable's in-game registration; lazer's sign-up form is passed on to osu-web unchanged (with the player's address) |
 | `/signalr/*` | the spectator server (lazer's hubs when it derives them from the API URL) |
 | `/uploads/default/beatmaps/<8+ digit id>/…` | TomYum (custom sets' covers and preview) |
 | other `/uploads/default/beatmaps/<id>/covers/…` | redirected to `assets.ppy.sh` |

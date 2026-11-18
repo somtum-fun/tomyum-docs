@@ -70,6 +70,25 @@ Only builds from b20151228 on can be asked to verify. Older builds follow
 If you want original old builds on your server, leave verification off: see
 [old clients](/clients/old-clients#device-verification).
 
+## Alts and ban evasion {id=alts}
+
+Every login records the machine's hashes (network adapters, the install's uninstall id, the disk
+serial). When an account that isn't verified yet logs in from the machine of a **restricted** account:
+
+- **Two hashes in common** (under Wine: the uninstall id and the same osu! folder): the login is
+  refused, and the staff log gets a `user.evasion_blocked` entry.
+- **One hash in common**: the player gets in but stays unverified, and staff are told once. A
+  stronger match later still refuses them.
+
+With no match to a restricted account, the account is verified, and from then on it always gets in;
+staff are only told if it later shares a machine with one. Staff can verify an account by hand with `!verify`, and
+see who shares a machine with `!alts`. A hardware ban follows the same two-hash rule, and the
+anti-cheat whitelist lets a player through it.
+
+Hashes that tell machines apart badly never count: empty ones, a disk without a serial, Wine's usual
+values (Wine logins are only matched by their uninstall id), and any value seen on 5 or more
+different machines. Staff and BanchoBot are never checked.
+
 ## Wrong passwords {id=wrong-passwords}
 
 Every password check (the game's login, the `/web` endpoints, IRC) counts wrong guesses for 15

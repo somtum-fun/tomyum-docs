@@ -45,6 +45,27 @@ lazer's spectating (and multiplayer and presence) is ppy's spectator server, the
 of the production stack, reached at `spectator.<domain>` or `osu.<domain>/signalr/`. It saves lazer
 replays to the website's uploads, where the website and TomYum read them.
 
+### Watching osu!(stable) players from lazer (experimental) {id=stable-from-lazer}
+
+With the `tomyum.stable-spectate` plugin, lazer players can see who is playing on osu!(stable) in
+**Currently online** and their friends list, and spectate them. It needs a lazer client that asks for
+it: somtum.fun's [TumThai](https://github.com/somtum-fun/TumThai) has the setting **Settings → Online →
+osu!(stable) players → Show osu!(stable) players (experimental)**, off by default. Other lazer clients,
+and TumThai with the setting off, see nothing new.
+
+- As on stable, any stable player online can be seen and watched.
+- While someone watches, the server's bot spectates the stable player (they see it join), which makes
+  their client send its frames; the frames go to lazer as they are.
+- lazer's accuracy and combo come from stable's score frames. lazer's own score is an estimate, since
+  stable sends hit counts and not each hit's combo. A play joined midway starts from the first frame
+  received.
+
+To turn it on, mount the plugin (`plugins/tomyum-stable-spectate` in TomYum-OSS) and trust it, and
+run a [tomyum-spectator](https://github.com/somtum-fun/tomyum-spectator) build that includes
+`TomYumStableSpectate.cs`. The two talk through Redis, so it needs no database. Its one setting is
+`intervalSeconds` (2). Details: the plugin's
+[README](https://github.com/somtum-fun/TomYum-OSS/tree/main/plugins/tomyum-stable-spectate).
+
 ## The tournament client
 
 The tournament client's windows spectate players like a game does, each showing its own player. See
