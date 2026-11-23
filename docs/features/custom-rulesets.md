@@ -1,7 +1,8 @@
 # Custom rulesets
 
 Custom osu!lazer rulesets from [rulesets.info](https://rulesets.info) (sentakki, tau, Rush!, ...) can have
-their own leaderboards and rankings, **by score** (there's no pp for them). Staff choose which ones count.
+their own leaderboards and rankings, ranked by **pp** from [Pla-ra](https://github.com/somtum-fun/plara) by default,
+or by **ranked score** per ruleset. Staff choose which ones count.
 
 ## How it works
 
@@ -19,10 +20,11 @@ their own leaderboards and rankings, **by score** (there's no pp for them). Staf
    mods are kept as the client sent them, a play with an automation mod (Autoplay, Cinema, Relax,
    Autopilot) isn't ranked, and the usual play-length check applies.
 4. **Leaderboards**: `GET /beatmaps/{id}/scores?mode=<slug>` gives each player's best by score (global,
-   country, friends, team), for lazer and for the beatmap page, which has an **Other rulesets…** dropdown on
-   osu! maps.
-5. **Rankings**: `/rankings/rulesets/{slug}` ranks players by ranked score (their best on each ranked map,
-   added up), worldwide or in one country. The rankings' mode selector has a **…** menu for them.
+   country, friends, team), as osu!'s boards do, with each play's pp shown; for lazer and for the beatmap page,
+   which has an **Other rulesets…** dropdown on osu! maps.
+5. **Rankings**: `/rankings/rulesets/{slug}` ranks players by pp, with ranked score (their best on each ranked
+   map, added up) as the other sort, worldwide or in one country. The rankings' mode selector has a **…** menu
+   for them.
 
 6. **Profiles**: the profile's ruleset bar has a **…** menu for them; each shows the player's rank, ranked
    score and plays in that ruleset, with Vanilla / Relax / Autopilot boards.
@@ -49,7 +51,16 @@ settings. Turning a ruleset off stops new plays submitting; its scores stay.
 scores too, with `RulesetId` 10 and up. ppy's score processor leaves them alone ("Unsupported ruleset"), and
 TomYum's own first places and rank #1 announcements stay with osu!'s four rulesets.
 
+## pp (Pla-ra)
+
+Pla-ra works out stars and pp for every custom ruleset: with the ruleset's own difficulty and performance calculators
+where it has working ones, and a shared model where it doesn't, the same on the server (the `plara` sidecar) and in the
+game. Staff can rank a ruleset by **ranked score** instead (admin panel → **Custom rulesets** → "ranked by"): its plays
+then show no pp and it has no Performance or Top Plays tab. Pla-ra keeps working out the pp, so switching back is
+instant. `php artisan tomyum:plara-recalculate` works the pp out again. Details:
+[docs/plara.md](https://github.com/somtum-fun/TomYum-OSS/blob/main/docs/plara.md).
+
 ## Not (yet) supported
 
-osu!(stable) can't play them (its mode is one byte, 0-3), and there's no multiplayer, spectating, replays or
-pp for them.
+osu!(stable) can't play them (its mode is one byte, 0-3), and there's no multiplayer, spectating or replays
+for them.

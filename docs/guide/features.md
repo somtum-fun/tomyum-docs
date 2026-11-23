@@ -27,7 +27,7 @@ IDs follow bancho.py: Relax is the mode + 4 and Autopilot the mode + 8 (osu!mani
 Relax and Autopilot have their own leaderboards, stats and rankings, ranked by pp, and lazer plays
 with those mods count towards them too. Their pp comes from the `pp-sidecar` when you route them to
 it (see [pp reworks](/features/pp-reworks)). Custom lazer rulesets (sentakki, tau, Rush!, …) are supported
-too, ranked by score: see [custom rulesets](/features/custom-rulesets).
+too, ranked by pp (Pla-ra) or by score: see [custom rulesets](/features/custom-rulesets).
 
 ## Core features
 

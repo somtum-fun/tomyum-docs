@@ -91,6 +91,7 @@ DOMAIN=example.com                 # the site is osu.example.com; players use -d
 CLOUDFLARE_TUNNEL_TOKEN=           # see step 4
 DB_ROOT_PASSWORD=                  # openssl rand -hex 24
 DB_PASSWORD=                       # openssl rand -hex 24
+REDIS_PASSWORD=                    # openssl rand -hex 32 (optional; empty: no password)
 SHARED_INTEROP_SECRET=             # openssl rand -hex 32
 OSU_WEB_APP_KEY=                   # step 3
 ```

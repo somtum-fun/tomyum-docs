@@ -33,6 +33,10 @@ copied to `.env`. `docker-compose.yml` reads it and passes the values on.
 | `CLOUDFLARE_TUNNEL_TOKEN` 🔒 | The Cloudflare Tunnel's connector token | |
 | `DB_ROOT_PASSWORD` 🔒 | MySQL's root password | `openssl rand -hex 24` |
 | `DB_PASSWORD` 🔒 | The `osuweb` account TomYum, the website and ppy's services share | `openssl rand -hex 24` |
+| `DB_MAX_CONNECTIONS` | MySQL's connection limit (TomYum, the website and its queue processors share it) | `500` |
+| `REDIS_PASSWORD` 🔒 | Redis's password, sent by TomYum, the website and ppy's services (letters and digits only) | empty: no password |
+| `ES_SECURITY` | Elasticsearch logins on | `false` |
+| `ES_PASSWORD` 🔒 | The `elastic` user's password (letters and digits), sent by the website and the score indexer | empty |
 | `SHARED_INTEROP_SECRET` 🔒 | Signs requests between TomYum, the website and ppy's services | `openssl rand -hex 32` |
 | `OSU_WEB_APP_KEY` 🔒 | The website's Laravel key | `docker compose run --rm artisan key:generate --show` |
 | `OSU_WEB_PATH` | Your osu-web fork's checkout, relative to `deploy/production` | `../../../osu-web` |

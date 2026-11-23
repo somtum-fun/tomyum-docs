@@ -122,5 +122,5 @@ TOMYUM_LASTFM__APISECRET=
 
 ## Custom rulesets
 
-Custom lazer rulesets from rulesets.info (sentakki, tau, Rush!, …) are supported, ranked by score: see
+Custom lazer rulesets from rulesets.info (sentakki, tau, Rush!, …) are supported, ranked by pp (Pla-ra) or by score: see
 [custom rulesets](/features/custom-rulesets).
