@@ -34,7 +34,7 @@ Nobody resets a password.
 | forks only: `maps.is_dan` | osu!dan courses and clears (the `tomyum.dan` plugin) | `--dan`: one course per dan difficulty, each player's best qualifying pass as their clear |
 
 ::: tip Inactivity
-A server that drops inactive players from its rankings (osu!somtum: no score for 180 days) sets
+A server that drops inactive players from its rankings (somtum.fun: no score for 180 days) sets
 `TOMYUM_RANKING__INACTIVEDAYS` for TomYum and `TOMYUM_RANKING_INACTIVE_DAYS` for the website to the same
 number; 0 (the default) keeps everyone ranked. Stats stay; the player is back the moment they play.
 :::
